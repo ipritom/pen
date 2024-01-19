@@ -5,10 +5,6 @@ import time
 import requests
 from datetime import datetime
 from pprint import pprint
-from dataclasses import dataclass
-
-# @dataclass
-# class ContentInfo:
     
 
 def extract_title_and_tags(file_path):
@@ -31,7 +27,6 @@ def get_github_commit_info(file_name):
     github_repo = 'pen'
     makdown_path = 'blogs'
 
-
     url = f'https://api.github.com/repos/{github_owner}/{github_repo}/commits?path={makdown_path}/{file_name}'
     response = requests.get(url)
     if response.status_code==200:
@@ -47,12 +42,22 @@ def process_markdown_folder(folder_path, output_json_path):
         if filename.endswith('.md'):
             content_info= get_github_commit_info(file_name=filename)
             content_creation_date  = content_info[len(content_info)-1]["commit"]["author"]["date"]
+            content_creation_date = datetime.strptime(content_creation_date, '%Y-%m-%dT%H:%M:%S%z')
             file_path = os.path.join(folder_path, filename)
             title, tags = extract_title_and_tags(file_path)
             data.append({'title': title, 'filename':filename, 'tags': tags, "created":content_creation_date})
+        
+    # Sort data based on the 'created_at' datetime
+    data.sort(key=lambda x: x['created'] if x['created'] else datetime.min, reverse=True)
+
+    # Custom JSON serializer for datetime objects
+    def json_serializer(obj):
+        if isinstance(obj, datetime):
+            return obj.isoformat()
+        raise TypeError(f'Type not serializable: {type(obj)}')
 
     with open(output_json_path, 'w', encoding='utf-8') as json_file:
-        json.dump(data, json_file, indent=2, ensure_ascii=False)
+        json.dump(data, json_file, indent=2, ensure_ascii=False, default=json_serializer)
 
 if __name__ == "__main__":
     
