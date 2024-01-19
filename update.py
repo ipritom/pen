@@ -52,7 +52,7 @@ def process_markdown_folder(folder_path, output_json_path):
             data[filename] = {'title': title, 'tags': tags, "created":content_creation_date}
 
     with open(output_json_path, 'w', encoding='utf-8') as json_file:
-        json.dump([data], json_file, indent=2, ensure_ascii=False)
+        json.dump(data, json_file, indent=2, ensure_ascii=False)
 
 if __name__ == "__main__":
     
