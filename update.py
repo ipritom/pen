@@ -49,7 +49,7 @@ def process_markdown_folder(folder_path, output_json_path):
             content_creation_date  = content_info[len(content_info)-1]["commit"]["author"]["date"]
             file_path = os.path.join(folder_path, filename)
             title, tags = extract_title_and_tags(file_path)
-            data.append({'title': title, 'tags': tags, "created":content_creation_date})
+            data.append({'title': title, 'filename':filename, 'tags': tags, "created":content_creation_date})
 
     with open(output_json_path, 'w', encoding='utf-8') as json_file:
         json.dump(data, json_file, indent=2, ensure_ascii=False)
