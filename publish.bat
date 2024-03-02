@@ -9,7 +9,8 @@ git push origin main
 
 PAUSE 
 
-@REM Updating the contents.json file
+@REM Updating the contents.json 
+call conda activate base
 python update.py
 
 PAUSE
@@ -19,5 +20,6 @@ git commit -m "update: contents info"
 git push origin main
 
 ECHO "Updated!"
+call conda deactivate
 
 PAUSE
