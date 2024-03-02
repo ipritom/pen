@@ -10,9 +10,14 @@ git push origin main
 PAUSE 
 
 @REM Updating the contents.json file
+python update.py
+
+PAUSE
+
 git add . 
 git commit -m "update: contents info"
 git push origin main
 
 ECHO "Updated!"
+
 PAUSE
