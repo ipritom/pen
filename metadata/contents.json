@@ -1,5 +1,15 @@
 [
   {
+    "title": "How many roads must a man walk down",
+    "filename": "man.md",
+    "tags": [
+      "bangla",
+      " philosophy",
+      " society"
+    ],
+    "created": "2024-03-08T05:26:04+00:00"
+  },
+  {
     "title": "অল্প কথায় মেশিন লার্নিং",
     "filename": "mlmodel.md",
     "tags": [
