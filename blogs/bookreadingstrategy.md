@@ -14,7 +14,8 @@
 
 * Thinking, Fast and Slow by Daniel Kahneman
 * [A History of God  by Karen Armstrong](https://www.goodreads.com/review/show/2700792948)
-* Enlightenment Now by Steven Pinker
+* My Name Is Red by Orhan Pamuk
+
 
 
 
