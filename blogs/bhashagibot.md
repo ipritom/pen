@@ -12,3 +12,6 @@
 
 NOTE: 
 * Grooming, Gossip and the Evolution of Language বইয়ে এই হাইপোথিসিসের কথা জানান রবিন ডানবার।
+
+
+<!-- [language, gossip] -->
