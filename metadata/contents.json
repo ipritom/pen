@@ -1,8 +1,19 @@
 [
   {
+    "title": "ইংরেজি বই পড়ার কৌশল",
+    "filename": "bookreadingstrategy.md",
+    "tags": [
+      "book"
+    ],
+    "created": "2024-09-18T17:02:42+00:00"
+  },
+  {
     "title": "গীবত করার দরকারে ভাষার বিবর্তন",
     "filename": "bhashagibot.md",
-    "tags": [],
+    "tags": [
+      "language",
+      " gossip"
+    ],
     "created": "2024-09-10T19:07:53+00:00"
   },
   {
