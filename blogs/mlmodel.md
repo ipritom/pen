@@ -71,7 +71,11 @@ else if vehicle_ahead():
 
 নিচে এই কাজের প্রক্রিয়া প্রর্যায়ক্রমে দেখানো হলো। 
 
-$$ \text{ইমেজ ম্যাট্রিক্স} -> f(x) -> \text{সিদ্ধান্ত (decision)} $$
+<div style="text-align: center; font-size: 12px;">
+
+$$ \text{ইমেজ ম্যাট্রিক্স} \to f(x) \to \text{সিদ্ধান্ত (decision)} $$
+</div>
+
 
 এখানে এই $f(x)$ ফাংশানটাই হচ্ছে মেশিন লার্নিং মডেল।  
 <!-- [ML, AI] -->
