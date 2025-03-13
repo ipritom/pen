@@ -2,7 +2,11 @@
   {
     "title": "How to Setup Keil inside VSCode",
     "filename": "keil_vscode.md",
-    "tags": [],
+    "tags": [
+      "vscode",
+      " keil",
+      " stm32"
+    ],
     "created": "2025-03-13T17:02:17+00:00"
   }
 ]
