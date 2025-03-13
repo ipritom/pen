@@ -34,7 +34,10 @@ def extract_title_and_tags(file_path):
     return title, tags
 
 
-def get_github_commit_info(file_name):
+def get_github_commit_info(file_name, markdown_path=None):
+    if markdown_path is None:
+        raise "Error"
+    
     github_owner = 'ipritom'
     github_repo = 'pen'
     makdown_path = 'blogs'
@@ -62,7 +65,7 @@ def process_markdown_folder(folder_path, output_json_path, newOnly:bool=False, e
     temp_metadata_map = {entry['filename']:i for i, entry in enumerate(temp_metadata)}
 
     # traversing files and update the metadata
-    for filename in os.listdir(folder_path):
+    for filename in os.listdir(markdown_folder):
         if filename.endswith('.md'):
             # avoid api call for the existing/published articles
             if newOnly and filename not in except_this:
@@ -71,7 +74,7 @@ def process_markdown_folder(folder_path, output_json_path, newOnly:bool=False, e
                     continue
             
             # fetch the github commit info
-            content_info= get_github_commit_info(file_name=filename)
+            content_info= get_github_commit_info(file_name=filename, markdown_path=folder_path)
             content_creation_date  = content_info[len(content_info)-1]["commit"]["author"]["date"]
             content_creation_date = datetime.strptime(content_creation_date, '%Y-%m-%dT%H:%M:%S%z')
             file_path = os.path.join(folder_path, filename)
@@ -99,8 +102,8 @@ if __name__ == "__main__":
 
     # Replace 'output.json' with the desired name of the output JSON file
     # output_json_file = 'metadata/contents.json'
-    output_json_file = "metadadata/silicon_contents.json"
+    output_json_file = "metadata/silicon_contents.json"
 
     s = time.time()
-    process_markdown_folder(markdown_folder, output_json_file, newOnly=True)
+    process_markdown_folder(markdown_folder, output_json_file, newOnly=False)
     print("Process Finished | Time taken", (time.time()-s), "seconds")
