@@ -40,7 +40,7 @@ After creating the new project, select the device. In this example, we are choos
 
 ![](https://res.cloudinary.com/djqcqqueb/image/upload/v1741881302/vscode_keil/cjleir4qwdubm8vygtz2.png)
 
-## Step-3: Know Your Programming Interface
+## Step 3: Know Your Programming Interface
 
 After you successfully create a project from the `CMSIS` tab you'll able to see the marked tools. 
 
