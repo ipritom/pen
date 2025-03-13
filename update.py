@@ -40,9 +40,10 @@ def get_github_commit_info(file_name, markdown_path=None):
     
     github_owner = 'ipritom'
     github_repo = 'pen'
-    makdown_path = 'blogs'
+    # makdown_path = 'blogs'
 
-    url = f'https://api.github.com/repos/{github_owner}/{github_repo}/commits?path={makdown_path}/{file_name}'
+    url = f'https://api.github.com/repos/{github_owner}/{github_repo}/commits?path={markdown_path}/{file_name}'
+    print(url)
     response = requests.get(url,headers=AUTH_HEADER)
 
     if response.status_code==200:
@@ -75,6 +76,8 @@ def process_markdown_folder(folder_path, output_json_path, newOnly:bool=False, e
             
             # fetch the github commit info
             content_info= get_github_commit_info(file_name=filename, markdown_path=folder_path)
+            print(filename, markdown_folder)
+            print(content_info)
             content_creation_date  = content_info[len(content_info)-1]["commit"]["author"]["date"]
             content_creation_date = datetime.strptime(content_creation_date, '%Y-%m-%dT%H:%M:%S%z')
             file_path = os.path.join(folder_path, filename)
@@ -97,11 +100,12 @@ def process_markdown_folder(folder_path, output_json_path, newOnly:bool=False, e
 if __name__ == "__main__":
     
     # Replace 'path/to/markdown/folder' with the actual path to your folder containing markdown files
-        
-    markdown_folder = 'silicon'
-
     # Replace 'output.json' with the desired name of the output JSON file
+    # article type: blogs
+    # markdown_folder = "blogs"
     # output_json_file = 'metadata/contents.json'
+    # article type: silicon
+    markdown_folder = 'silicon'
     output_json_file = "metadata/silicon_contents.json"
 
     s = time.time()

@@ -21,5 +21,6 @@ process_markdown_folder(markdown_folder, output_json_file, newOnly=False, except
 
 ```
 
-`newOnly=True` : will save time and reduce api hit
+`newOnly=True` : will save time and reduce api hit.
+
 `except_this=[]`: includes list of existing contents `.md` to update metadata

@@ -67,3 +67,6 @@ If all the installations are correct and your board is connected to your PC thro
 
 
 Now you have Keil inside VScode. Happy coding!
+
+
+<!-- [vscode, keil, stm32] -->
