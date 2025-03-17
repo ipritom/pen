@@ -101,12 +101,14 @@ if __name__ == "__main__":
     
     # Replace 'path/to/markdown/folder' with the actual path to your folder containing markdown files
     # Replace 'output.json' with the desired name of the output JSON file
+
     # article type: blogs
-    # markdown_folder = "blogs"
-    # output_json_file = 'metadata/contents.json'
+    markdown_folder = "blogs"
+    output_json_file = 'metadata/contents.json'
+    
     # article type: silicon
-    markdown_folder = 'silicon'
-    output_json_file = "metadata/silicon_contents.json"
+    # markdown_folder = 'silicon'
+    # output_json_file = "metadata/silicon_contents.json"
 
     s = time.time()
     process_markdown_folder(markdown_folder, output_json_file, newOnly=False)
