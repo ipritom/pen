@@ -1,5 +1,15 @@
 [
   {
+    "title": "শূন্য থেকে STM32 শেখা",
+    "filename": "stm32_chap0.md",
+    "tags": [
+      "stm32",
+      " embedded",
+      " electronics"
+    ],
+    "created": "2025-03-17T14:43:05+00:00"
+  },
+  {
     "title": "kukur",
     "filename": "kukur.md",
     "tags": [
