@@ -9,10 +9,10 @@ from dotenv import load_dotenv
 from datetime import datetime
 from pprint import pprint
 
-load_dotenv()
+load_dotenv(dotenv_path=".env", override=True)
 GITHUB_TOKEN = os.getenv('GIT_PAT')
+AUTH_HEADER = {"Authorization": f'token {GITHUB_TOKEN}'}
 
-AUTH_HEADER = {"Authorization": f"token {GITHUB_TOKEN}"}
 
 def read_json(file_path):
     with open(file_path, 'r', encoding='utf-8') as file:
@@ -43,7 +43,7 @@ def get_github_commit_info(file_name, markdown_path=None):
     # makdown_path = 'blogs'
 
     url = f'https://api.github.com/repos/{github_owner}/{github_repo}/commits?path={markdown_path}/{file_name}'
-    print(url)
+
     response = requests.get(url,headers=AUTH_HEADER)
 
     if response.status_code==200:
@@ -111,5 +111,5 @@ if __name__ == "__main__":
     # output_json_file = "metadata/silicon_contents.json"
 
     s = time.time()
-    process_markdown_folder(markdown_folder, output_json_file, newOnly=True)
+    process_markdown_folder(markdown_folder, output_json_file, newOnly=False)
     print("Process Finished | Time taken", (time.time()-s), "seconds")
