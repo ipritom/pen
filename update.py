@@ -111,5 +111,5 @@ if __name__ == "__main__":
     # output_json_file = "metadata/silicon_contents.json"
 
     s = time.time()
-    process_markdown_folder(markdown_folder, output_json_file, newOnly=False)
+    process_markdown_folder(markdown_folder, output_json_file, newOnly=True)
     print("Process Finished | Time taken", (time.time()-s), "seconds")
