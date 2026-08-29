@@ -1,4 +1,3 @@
-
 # একটা ছুটির দিনের শুরুর গল্প
 
 <i> "I felt relieved, but also a little lonely, or maybe sad…"</i>
@@ -43,3 +42,6 @@
 সানায় তার ছোট্ট লেখায় জানিয়েছে, ঘর থেকে আরশোলাটি সরিয়ে ফেলার পর তার মিশ্র অনুভূতির কথা।
 
 "I felt relieved, but also a little lonely, or maybe sad…"
+
+
+<!-- [story, diary] -->
